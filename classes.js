@@ -36,21 +36,15 @@ class Student extends User {
 
     const course = today - this.year;
 
-    switch (course) {
-      case 1:
-        suffix = 'st';
-        break;
-      case 2:
-        suffix = 'nd';
-      case 3:
-        suffix = 'rd';
-        break;
-      case 4:
-      case 5:
-        suffix = 'th';
-      default:
-        break;
-    }
+    const mapa = new Map([
+      [1, (suffix = 'st')],
+      [2, (suffix = 'nd')],
+      [3, (suffix = 'rd')],
+      [4, (suffix = 'th')],
+      [5, (suffix = 'th')],
+    ]);
+
+    suffix = mapa.get(course);
 
     if (course <= 5) {
       paragraph.innerHTML = `Student is in ${course}${suffix} year.`;
@@ -60,6 +54,6 @@ class Student extends User {
   }
 }
 
-const ivanov = new Student('Ivan', 'Ivanov', 2017);
+const ivanov = new Student('Ivan', 'Ivanov', 2020);
 ivanov.getFullName();
 ivanov.getCourse();

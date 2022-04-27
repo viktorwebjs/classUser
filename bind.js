@@ -6,16 +6,20 @@ const user = {
     company: 'WebJs',
     position: 'TeamLead',
   },
+
   getFullName() {
     console.log(`Firstname ${this.firstName}, lastname ${this.lastName}`);
   },
+
   getFullJob() {
     console.log(`Job -> ${this.job.company}: ${this.job.position}`);
   },
+
   getBySalary() {
     console.log(`Salary ${this.salary} byr`);
   },
 };
+
 user.getFullName();
 user.getFullJob();
 user.getBySalary();
@@ -32,6 +36,9 @@ const vanya = {
 };
 
 const baiden = user.getFullName.bind(vanya);
+
 baiden();
+
 const obama = user.getFullJob.bind(vanya);
+
 obama();
