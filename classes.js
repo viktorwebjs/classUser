@@ -25,9 +25,9 @@ class Student extends User {
     this.year = year;
   }
 
-  getFullName() {
-    super.getFullName();
-  }
+  // getFullName() {
+  //   super.getFullName();
+  // }
   getCourse() {
     const addInfo = document.querySelector('.addInfo');
     const paragraph = document.createElement('p');
