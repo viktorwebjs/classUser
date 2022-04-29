@@ -36,9 +36,7 @@ const vanya = {
 };
 
 const baiden = user.getFullName.bind(vanya);
-
-baiden();
-
 const obama = user.getFullJob.bind(vanya);
 
+baiden();
 obama();
