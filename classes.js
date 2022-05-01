@@ -25,35 +25,27 @@ class Student extends User {
     this.year = year;
   }
 
-  // getFullName() {
-  //   super.getFullName();
-  // }
   getCourse() {
     const addInfo = document.querySelector('.addInfo');
     const paragraph = document.createElement('p');
     const today = moment().year();
-    let suffix = '';
-
     const course = today - this.year;
-
     const mapa = new Map([
-      [1, (suffix = 'st')],
-      [2, (suffix = 'nd')],
-      [3, (suffix = 'rd')],
-      [4, (suffix = 'th')],
-      [5, (suffix = 'th')],
+      [1, 'st'],
+      [2, 'nd'],
+      [3, 'rd'],
+      [4, 'th'],
+      [5, 'th'],
     ]);
 
-    suffix = mapa.get(course);
-
     if (course <= 5) {
-      paragraph.innerHTML = `Student is in ${course}${suffix} year.`;
+      paragraph.innerHTML = `Student is in ${course}${mapa.get(course)} year.`;
     } else paragraph.innerHTML = `Student? No, this user  not student.`;
 
     addInfo.append(paragraph);
   }
 }
 
-const ivanov = new Student('Ivan', 'Ivanov', 2020);
+const ivanov = new Student('Ivan', 'Ivanov', 2021);
 ivanov.getFullName();
 ivanov.getCourse();
